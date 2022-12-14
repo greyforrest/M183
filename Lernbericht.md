@@ -7,7 +7,7 @@ Im Modul 183 haben wir uns mit der Sicherheit von Applikationen und Benutzerdate
 
 ## Was habe ich gelernt?
 
-Ich habe gelernt, wie Passwörter sicher in Datenbanken gespeichert werden können.
+Ich habe gelernt, wie Passwörter sicherer in Datenbanken gespeichert werden können.
 
 ## Beschreibung
 

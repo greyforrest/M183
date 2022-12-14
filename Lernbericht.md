@@ -22,7 +22,7 @@ Ein Salt ist eine zufällige Zeichenfolge, die auch im Klartext in der Datenbank
 Momentan gibt es 2 besonders sichere Algorithmen zum hashen: bcrypt und PBKDF2. Ich habe mich mit bcrypt beschäftigt. Bei diesem Algorithmus wird beim encoden des Passworts einiges an den Anfang gehängt: Zuerst den hashing-Algorithmus zum Beispiel "$2a$". Danach die Anzahl Runden, die gemacht wurden, um das Passwort zu hashen. Dann folgt der Salt und anschliessend das gehashte Passwort. 
 
 Hier ein Beispiel für das Salten und Hashen mit dem BCryptPasswordEncoder aus dem Springframework:
-```
+``
 private BCryptPasswordEncoder saltAndHash = new BCryptPasswordEncoder(10, new SecureRandom()); 
 //10 ist dabei die Anzahl Runden, die beim Hashen gemacht werden, umso mehr Runden desto sicherer, dafür ladet es länger
 //Der SecureRandom ist der Salt, der dem Encoder direkt mitgegeben wird. Das hat in diesem Fall einen Nachteil: 
@@ -38,13 +38,15 @@ public boolean comparePassword(String eingegebenesPasswort, String hashAusDerDat
     //Das bereits gehashte Passwort wird nie decoded.
     return saltAndHash.matches(eingegebenesPasswort, hashAusDerDatenbank)
 }
-```
+``
 In einem eigenen Projekt aus dem Lernatelier, in dem Benutzerdaten in Datenbanken gespeichert werden, habe ich die Passwörter mittels BCryptPasswortEncoder gehashed und gesalted und so in einer Datenbank gespeichert. Dabei kann man schön sehen, wie sich alles verändert. Das Passwort, das ich gewählt habe um mich auf meiner Website anzumelden, ist *"aVm8Y78cazuF&&"*. In der Datenbank sieht das ganze aber so aus:
 
 ![Screenshot aus der Datenbank, wo das Passwort nicht mehr gleich aussieht](https://user-images.githubusercontent.com/69569613/207620239-752a1d77-4562-48f3-950d-988f20335667.png)
 
 `$2a` steht für die Verschlüsselungsart.
+
 `$10` sind die Anzahl Runden.
+
 Der Rest ist der Salt und das Passwort, gehashed.
 
 ***Da es in diesem Modul um Datensicherheit geht, habe ich das Passwort natürlich sofort nach dem Screenshot geändert.***

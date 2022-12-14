@@ -44,7 +44,7 @@ public boolean comparePassword(String eingegebenesPasswort, String hashAusDerDat
 Wie bereits erwähnt, habe ich das selbst in einem eigenen Projekt angewendet. Dabei ist das Passwort, das ich gewählt habe um mich auf meiner Website anzumelden, "aVm8Y78cazuF&&". In der Datenbank sieht das ganze aber so aus: 
 ![Screenshot aus der Datenbank, wo das Passwort nicht mehr gleich aussieht](https://user-images.githubusercontent.com/69569613/207620239-752a1d77-4562-48f3-950d-988f20335667.png)
 
-Da es in diesem Modul um Datensicherheit geht, habe ich das Passwort natürlich sofort geändert.
+Da es in diesem Modul um Datensicherheit geht, habe ich das Passwort natürlich sofort nach dem Screenshot geändert.
 
 ## Verifikation
 
